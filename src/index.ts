@@ -1,15 +1,15 @@
 import * as dotenv from "dotenv";
-import { OpenAI } from "langchain";
+import { UserAddressAPI, UserOrderCountAPI } from "./tools/apiTools.js";
+import ChatAgentMemory from "./chatAgentMemory/index.js";
+import ConsoleInterface from "./consoleInterface/index.js";
+
 
 dotenv.config();
 
-const model = new OpenAI({
-  modelName: "gpt-3.5-turbo",
-  openAIApiKey: process.env.OPENAI_API_KEY,
-});
+const run = async () => {
+  const tools = [new UserAddressAPI(), new UserOrderCountAPI()];
+  const executor = await ChatAgentMemory(tools);
+  ConsoleInterface(executor);
+};
 
-const res = await model.call(
-  "What's a good idea for an application to build with GPT-3?"
-);
-
-console.log(res);
+run();

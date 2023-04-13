@@ -1,0 +1,12 @@
+{
+    "orderCount": {
+        "id": 10010231,
+        "customerName": "Vikram Menon",
+        "orderCount": 15
+    },
+    "addressDetails": {
+        "id": 10010231,
+        "customerName": "Vikram Menon",
+        "shippingAddress": "4835 Lyndon B Johnson Fwy Suite 540, Dallas, TX 75244"
+    }
+}
