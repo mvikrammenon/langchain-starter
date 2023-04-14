@@ -25,3 +25,6 @@ This uses the same tsconfig and build setup as the [examples repo](https://githu
 - `npm start` to run your program
 - `Ask about 'how many order I have'` to initiate an API call to `/orderCount`
 - `Ask about 'what is my shipping address'` to initiate an API call to `/addressDetails`
+
+# Usage Screenshot
+![Example console output](./images/lanchain-tools-example.png)

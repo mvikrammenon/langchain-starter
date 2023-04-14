@@ -3,3 +3,4 @@ node_modules
 dist
 .turbo
 temp.ts
+.DS_Store
