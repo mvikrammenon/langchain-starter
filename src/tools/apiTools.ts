@@ -1,10 +1,16 @@
 import { Tool } from "langchain/tools";
+/**
+ * Present approach is to imagine tools as separate API calls.
+ * Ideal approach would be to have a single API call per customer, similar to ChatGPT plugin.
+ * Need to figure out how to do that.
+ * 
+ * */ 
 
 class UserAddressAPI extends Tool {
     constructor() {
         super();
     }
-    name = "user address";
+    name = "address";
     description =
         "a tool that fetches user's shipping address information from a database";
     url = "http://localhost:3000/addressDetails";
@@ -29,7 +35,7 @@ class UserOrderCountAPI extends Tool {
     constructor() {
         super();
     }
-    name = "user order count";
+    name = "order";
     description =
         "a tool that fetches user's total order count information from a database";
     url = "http://localhost:3000/orderCount";

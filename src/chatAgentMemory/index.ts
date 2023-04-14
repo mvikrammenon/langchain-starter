@@ -4,7 +4,8 @@ import { initializeAgentExecutor } from "langchain/agents";
 
 /**
  * 
- * Creates a LangChain agent with OpenAI chat model, tools and assign some memory.
+ * Creates a LangChain agent with OpenAI chat model, tools and assign some memory (for storing user name/session related info).
+ * Uses "chat-conversational-react-description" Agent for conversation with memory: https://js.langchain.com/docs/modules/agents/agents/#which-agent-to-choose
  * 
  * @param tools - Array of API tools or calculators etc.
  * @returns executor
@@ -15,10 +16,10 @@ const createChatAgent = async (tools: any[]) => {
     
     const executor = await initializeAgentExecutor(
       tools,
-      model,
-      "chat-conversational-react-description",
-      true
+      model, // ChatOpenAI model. Can be replaced with any other model.
+      "chat-conversational-react-description", // Agent name
     );
+    // Find out memory limitation
     executor.memory = new BufferMemory({
       returnMessages: true,
       memoryKey: "chat_history",
